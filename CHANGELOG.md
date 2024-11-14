@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Updated bin/setup script to generate `.rubocop.yml` config
+
+
 ## [0.1.0] - 2024-11-14
 
 **Full Changelog**: https://github.com/emboldagency/embold-ruby-style/commits/v0.1.0

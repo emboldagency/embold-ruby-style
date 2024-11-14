@@ -2,6 +2,16 @@
 
 Embold shared ruby style configs.
 
+## Authentication
+
+Ensure your `~/.bundle/config` file includes your GitHub credentials:
+
+```bash
+bundle config set --global github.com YOUR_GITHUB_USERNAME:YOUR_GITHUB_TOKEN
+```
+
+Replace `YOUR_GITHUB_USERNAME` with your GitHub username and `YOUR_GITHUB_TOKEN` with your personal access token.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -14,31 +24,23 @@ group :development, :test do
 end
 ```
 
-Or, for a Ruby library, add this to your gemspec:
-
-```ruby
-spec.add_development_dependency 'embold_ruby_style'
-```
-
 And then run:
 
 ```bash
 $ bundle install
 ```
 
-## Authentication
+## Setup
 
-Ensure your `~/.bundle/config` file includes your GitHub credentials:
+To create a `.rubocop.yml` file with the required configuration, run the following command in your project directory:
 
 ```bash
-bundle config set --global github.com YOUR_GITHUB_USERNAME:YOUR_GITHUB_TOKEN
+$ bin/em_style_setup
 ```
 
-Replace `YOUR_GITHUB_USERNAME` with your GitHub username and `YOUR_GITHUB_TOKEN` with your personal access token.
+This will prompt you to initialize a `.rubocop.yml` file in the current directory with the necessary configuration to inherit the gem's RuboCop settings.
 
-## Usage
-
-Create a `.rubocop.yml` with the following directives:
+Alternatively, you can manually create a `.rubocop.yml` with the following directives:
 
 ```yaml
 inherit_gem:
@@ -46,10 +48,12 @@ inherit_gem:
     - default.yml
 ```
 
-Now, run:
+## Usage
+
+Run:
 
 ```bash
 $ bundle exec rubocop
 ```
 
-You do not need to include rubocop directly in your application's dependencies. `embold_ruby_style` will include a specific version of `rubocop` and `rubocop-rspec` that is shared across all projects.
+You do not need to include rubocop directly in your application's dependencies. `embold_ruby_style` will include a specific version of `rubocop` along with any required extensions.

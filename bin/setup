@@ -3,6 +3,10 @@ set -euo pipefail
 IFS=$'\n\t'
 set -vx
 
+# Ensure the script runs from the project root
+cd "$(dirname "$0")/.."
+
 bundle install
 
-# Do any other automated setup that you need to do here
+# Run the Ruby setup script
+bundle exec ruby -r "./lib/embold_ruby_style/setup" -e "EmboldRubyStyle::Setup.run"

@@ -1,0 +1,3 @@
+inherit_gem:
+  embold_ruby_style:
+    - default.yml
