@@ -1,4 +1,7 @@
 {
+    "[github-actions-workflow]": {
+        "editor.tabSize": 2
+    },
     "[ruby]": {
         "editor.defaultFormatter": "rubocop.vscode-rubocop",
         "editor.rulers": [
@@ -9,6 +12,9 @@
         "files.insertFinalNewline": true,
         "files.trimFinalNewlines": true,
         "files.trimTrailingWhitespace": true
+    },
+    "[yaml]": {
+        "editor.tabSize": 2,
     },
     "editor.formatOnSave": true,
     "editor.tabSize": 4,

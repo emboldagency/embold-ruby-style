@@ -1,0 +1,32 @@
+name: Deploy Gem
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3.6
+
+    - name: Install dependencies
+      run: bundle install
+
+    - name: Build gem
+      run: bundle exec rake build
+
+    - name: Publish gem
+      env:
+        RUBYGEMS_HOST: https://rubygems.pkg.github.com/emboldagency
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: gem push --key github --host $RUBYGEMS_HOST pkg/embold_ruby_style-*.gem
