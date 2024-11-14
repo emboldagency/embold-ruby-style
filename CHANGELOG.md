@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - 2024-11-13
 
+**Full Changelog**: https://github.com/emboldagency/embold-ruby-style/commits/v0.1.0
+
 ### Added
 - Initial release of `embold_ruby_style` gem.
 - RuboCop extensions for performance, Rails, Rake
