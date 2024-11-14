@@ -6,10 +6,11 @@ Embold shared ruby style configs.
 
 Add this line to your application's Gemfile:
 
-```Gemfile
-group :test, :development do
+```ruby
+source "https://rubygems.pkg.github.com/emboldagency" do
   gem 'embold_ruby_style'
 end
+```
 
 Or, for a Ruby library, add this to your gemspec:
 
@@ -23,13 +24,23 @@ And then run:
 $ bundle install
 ```
 
+## Authentication
+
+Ensure your `~/.bundle/config` file includes your GitHub credentials:
+
+```bash
+bundle config set --global github.com YOUR_GITHUB_USERNAME:YOUR_GITHUB_TOKEN
+```
+
+Replace `YOUR_GITHUB_USERNAME` with your GitHub username and `YOUR_GITHUB_TOKEN` with your personal access token.
+
 ## Usage
 
 Create a `.rubocop.yml` with the following directives:
 
 ```yaml
 inherit_gem:
-  embold-style:
+  embold_ruby_style:
     - default.yml
 ```
 
@@ -39,4 +50,4 @@ Now, run:
 $ bundle exec rubocop
 ```
 
-You do not need to include rubocop directly in your application's dependencies. embold_ruby_style will include a specific version of `rubocop` and `rubocop-rspec` that is shared across all projects.
+You do not need to include rubocop directly in your application's dependencies. `embold_ruby_style` will include a specific version of `rubocop` and `rubocop-rspec` that is shared across all projects.

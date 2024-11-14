@@ -52,7 +52,7 @@ gem push --key github --host https://rubygems.pkg.github.com/emboldagency pkg/em
 
    ```bash
    bundle exec rake build
-   gem push --key github --host https://rubygems.pkg.github.com/<GITHUB_USERNAME> pkg/embold_ruby_style-X.XX.XX.gem
+   gem push --key github --host https://rubygems.pkg.github.com/emboldagency pkg/embold_ruby_style-X.XX.XX.gem
    ```
 
 ## Using GitHub Packages as Dependencies in Bundler
@@ -61,7 +61,7 @@ gem push --key github --host https://rubygems.pkg.github.com/emboldagency pkg/em
    Add the following lines to your `Gemfile`:
 
    ```ruby
-   source "https://rubygems.pkg.github.com/<GITHUB_USERNAME>" do
+   source "https://rubygems.pkg.github.com/emboldagency" do
      gem "embold_ruby_style"
    end
    ```
