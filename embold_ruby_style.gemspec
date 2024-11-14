@@ -35,11 +35,11 @@ Gem::Specification.new do |spec|
     spec.add_dependency("bundler", "~> 2.5")
     spec.add_dependency("rake", "~> 13.0")
     spec.add_dependency("rubocop", "~> 1.54")
-    spec.add_dependency("rubocop-performance")
-    spec.add_dependency("rubocop-rails")
-    spec.add_dependency("rubocop-rake")
+    spec.add_dependency("rubocop-performance", "~> 1.2")
+    spec.add_dependency("rubocop-rails", "~> 2.2")
+    spec.add_dependency("rubocop-rake", "~> 0.6")
     # spec.add_dependency("rubocop-rspec") # uncomment if we start using RSpec
-    spec.add_dependency("rubocop-shopify")
+    spec.add_dependency("rubocop-shopify", "~> 2.1")
 
     spec.metadata["rubygems_mfa_required"] = "true"
 end
