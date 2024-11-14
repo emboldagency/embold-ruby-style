@@ -1,0 +1,33 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  # - rubocop-rspec # uncomment this line if we start using RSpec
+
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+inherit_mode:
+  merge:
+  - Exclude
+  - Include
+
+AllCops:
+  SuggestExtensions: false
+  TargetRubyVersion: 3.0
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*.rb
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 4
+
+Layout/MultilineMethodCallIndentation:
+  IndentationWidth: 4
+
+Metrics/ParameterLists:
+  Enabled: false

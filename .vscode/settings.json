@@ -1,0 +1,21 @@
+{
+    "[ruby]": {
+        "editor.defaultFormatter": "rubocop.vscode-rubocop",
+        "editor.rulers": [
+            120
+        ],
+        "editor.tabSize": 4,
+        "editor.semanticHighlighting.enabled": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "files.associations": {
+        "*.gemspec": "ruby",
+        "*.rake": "ruby",
+        "gemfile": "ruby",
+        "rakefile": "ruby"
+    },
+}
