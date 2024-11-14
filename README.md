@@ -7,8 +7,10 @@ Embold shared ruby style configs.
 Add this line to your application's Gemfile:
 
 ```ruby
-source "https://rubygems.pkg.github.com/emboldagency" do
-  gem 'embold_ruby_style'
+group :development, :test do
+  source "https://rubygems.pkg.github.com/emboldagency" do
+    gem 'embold_ruby_style'
+  end
 end
 ```
 

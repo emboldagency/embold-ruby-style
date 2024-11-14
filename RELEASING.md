@@ -4,56 +4,24 @@
 1. Tag the release: `git tag v{VERSION}`
 1. Push changes: `git push --tags`
 1. Update the release notes on GitHub.com
-1. Build and publish:
 
-```bash
-bundle exec rake build
-gem push --key github --host https://rubygems.pkg.github.com/emboldagency pkg/embold_ruby_style-X.XX.XX.gem
-```
+## Publishing to GitHub RubyGems Registry
+
+The publishing process is automated using GitHub Actions. When a new tag is pushed, the GitHub Actions workflow will automatically build and publish the gem to the GitHub Package Registry.
+
+### Manual Trigger
+
+You can also manually trigger the GitHub Actions workflow from the "Actions" tab in your GitHub repository.
+
+## Authentication
+
+GitHub Actions automatically creates a `GITHUB_TOKEN` secret for you, which is used for authentication within workflows. No additional setup is required.
+
+## Announcing the Release
 
 * Announce the new release,
    making sure to say "thank you" to the contributors
    who helped shape this version!
-
-## Publishing to GitHub RubyGems Registry
-
-1. **Authenticate with GitHub Packages**:
-   Create a personal access token with the `write:packages` and `read:packages` scopes. Save this token securely.
-
-   You can also use gh cli to get your current oauth token if you have the correct permissions already.
-   
-   ```bash
-   gh auth token
-   ```
-
-2. **Add GitHub as a gem source**:
-   Add the following lines to your `~/.gem/credentials` file (create the file if it doesn't exist):
-
-   ```yaml
-   ---
-   :github: Bearer YOUR_GITHUB_TOKEN
-   ```
-
-   Ensure the file has the correct permissions:
-
-   ```bash
-   chmod 0600 ~/.gem/credentials
-   ```
-
-3. **Update your gemspec**:
-   Ensure your gemspec includes the GitHub Packages host:
-
-   ```ruby
-   spec.metadata["allowed_push_host"] = "https://rubygems.pkg.github.com/emboldagency"
-   ```
-
-4. **Build and push your gem**:
-   Run the following commands to build and push your gem:
-
-   ```bash
-   bundle exec rake build
-   gem push --key github --host https://rubygems.pkg.github.com/emboldagency pkg/embold_ruby_style-X.XX.XX.gem
-   ```
 
 ## Using GitHub Packages as Dependencies in Bundler
 
