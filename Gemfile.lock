@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    embold_ruby_style (0.2.0)
+    embold_ruby_style (0.2.1)
       bundler (~> 2.5)
       rake (~> 13.0)
       rubocop (~> 1.54)
       rubocop-performance (~> 1.2)
       rubocop-rails (~> 2.2)
       rubocop-rake (~> 0.6)
-      rubocop-shopify (~> 2.1)
+      rubocop-shopify (~> 2.0)
 
 GEM
   remote: https://rubygems.org/

@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require_relative "../lib/embold_ruby_style"
 
