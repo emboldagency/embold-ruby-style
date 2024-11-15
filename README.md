@@ -35,7 +35,7 @@ $ bundle install
 To create a `.rubocop.yml` file with the required configuration, run the following command in your project directory:
 
 ```bash
-$ bin/em_style_setup
+$ bundle exec embold_ruby_style
 ```
 
 This will prompt you to initialize a `.rubocop.yml` file in the current directory with the necessary configuration to inherit the gem's RuboCop settings.

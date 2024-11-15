@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+require_relative "../lib/embold_ruby_style"
+
+EmboldRubyStyle.run_setup
