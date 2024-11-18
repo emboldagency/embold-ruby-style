@@ -5,7 +5,9 @@ require "fileutils"
 module EmboldRubyStyle
     class Setup
         class << self
-            delegate :run, to: :new
+            def run # rubocop:disable Rails/Delegate
+                new.run
+            end
         end
 
         def run
@@ -15,7 +17,7 @@ module EmboldRubyStyle
         private
 
         def prompt_initialize_rubocop_config
-            init_prompt = "Would you like to initialize .rubocop.yml with the required configuration? (Y/n)"
+            init_prompt = "Would you like to initialize '.rubocop.yml' with the required configuration? (Y/n)"
             $stdout.print(init_prompt)
             user_input = $stdin.gets.chomp
 
@@ -27,13 +29,12 @@ module EmboldRubyStyle
             stub_path = "stubs/rubocop.yml.stub"
 
             if File.exist?(config_path)
-                $stdout.print("#{config_path} already exists. ")
-                $stdout.print("Add the following configuration to your existing .rubocop.yml file:\n")
-                $stdout.print(File.read(stub_path))
+                $stdout.print("#{config_path} already exists. \
+                    Add the following configuration to your existing '.rubocop.yml' file: \
+                    #{File.read(stub_path)}")
             else
                 FileUtils.cp(stub_path, config_path)
                 $stdout.print("#{config_path} has been created with the required configuration.")
-                File.write(config_path, File.read(stub_path))
             end
         end
     end
