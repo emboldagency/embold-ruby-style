@@ -25,7 +25,17 @@ Gem::Specification.new do |spec|
     spec.files = IO.popen(["git", "ls-files", "-z"], chdir: __dir__, err: IO::NULL) do |ls|
         ls.readlines("\x0", chomp: true).reject do |f|
             (f == gemspec) ||
-                f.start_with?("exe/", "test/", "spec/", "features/", ".git", "appveyor", "Gemfile")
+                f.start_with?(
+                    ".git",
+                    ".github/",
+                    ".vscode/",
+                    "appveyor",
+                    "bin/",
+                    "features/",
+                    "Gemfile",
+                    "spec/",
+                    "test/",
+                )
         end
     end
     spec.bindir = "exe"
@@ -35,11 +45,9 @@ Gem::Specification.new do |spec|
     spec.add_dependency("bundler", "~> 2.5")
     spec.add_dependency("rake", "~> 13.0")
     spec.add_dependency("rubocop", "~> 1.54")
-    spec.add_dependency("rubocop-performance", "~> 1.2")
-    spec.add_dependency("rubocop-rails", "~> 2.2")
+    spec.add_dependency("rubocop-performance", "~> 1.11")
+    spec.add_dependency("rubocop-rails", "~> 2.12")
     spec.add_dependency("rubocop-rake", "~> 0.6")
-    # spec.add_dependency("rubocop-rspec", "~> 3.0") # uncomment if we start using RSpec
+    # spec.add_development_dependency("rubocop-rspec", "~> 2.5") # uncomment if we start using RSpec
     spec.add_dependency("rubocop-shopify", "~> 2.0")
-
-    spec.metadata["rubygems_mfa_required"] = "true"
 end

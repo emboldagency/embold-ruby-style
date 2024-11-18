@@ -19,9 +19,7 @@ module EmboldRubyStyle
             $stdout.print(init_prompt)
             user_input = $stdin.gets.chomp
 
-            if user_input.empty? || user_input.downcase == "y"
-                initialize_rubocop_config
-            end
+            initialize_rubocop_config if user_input.empty? || user_input.downcase == "y"
         end
 
         def initialize_rubocop_config
