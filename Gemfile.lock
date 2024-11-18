@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    embold_ruby_style (0.2.2)
+    embold_ruby_style (0.2.5)
       bundler (~> 2.5)
       rake (~> 13.0)
       rubocop (~> 1.54)
