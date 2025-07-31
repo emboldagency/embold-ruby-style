@@ -1,5 +1,9 @@
 # Embold Ruby Style
 
+![Semantic Versioning](https://embold.net/api/github/badge/semver.php?repo=embold-ruby-style) <!--
+--> [![release.yml](https://embold.net/api/github/badge/workflow-status.php?repo=embold-ruby-style&workflow=release.yml)](https://github.com/emboldagency/embold-ruby-style/actions/workflows/release.yml) <!--
+--> [![ci.yml](https://embold.net/api/github/badge/workflow-status.php?repo=embold-ruby-style&workflow=ci.yml)](https://github.com/emboldagency/embold-ruby-style/actions/workflows/ci.yml)
+
 Embold shared ruby style configs.
 
 ## Authentication
