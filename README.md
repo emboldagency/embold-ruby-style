@@ -6,24 +6,6 @@
 
 Embold shared ruby style configs.
 
-## Authentication
-
-To install gems from the GitHub Package Repository RubyGems registry, you'll need a personal access token with the right scopes.
-
-[Generate a personal access token (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with at least the read:packages scope.
-
-Ensure your `~/.bundle/config` file includes your GitHub credentials:
-
-```bash
-bundle config set --global github.com YOUR_GITHUB_USERNAME:YOUR_GITHUB_TOKEN
-```
-
-Alternatively, you can set the `BUNDLE_RUBYGEMS__PKG__GITHUB__COM` environment variable.
-```bash
-export BUNDLE_RUBYGEMS__PKG__GITHUB__COM=YOUR_GITHUB_USERNAME:YOUR_GITHUB_TOKEN
-```
-
-Replace `YOUR_GITHUB_USERNAME` with your GitHub username and `YOUR_GITHUB_TOKEN` with your personal access token.
 
 ## Installation
 
@@ -31,9 +13,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 group :development, :test do
-  source "https://rubygems.pkg.github.com/emboldagency" do
-    gem 'embold_ruby_style'
-  end
+  gem 'embold_ruby_style', github: 'emboldagency/embold_ruby_style', branch: 'main'
 end
 ```
 
