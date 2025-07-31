@@ -9,11 +9,11 @@ Gem::Specification.new do |spec|
     spec.email = ["tyler@embold.com"]
 
     spec.summary = "Embold style guides and shared style configs."
-    spec.homepage = "https://github.com/emboldagency/embold-ruby-style"
+    spec.homepage = "https://github.com/emboldagency/embold_ruby_style"
     spec.required_ruby_version = ">= 3.0.0"
 
     spec.metadata["allowed_push_host"] = "https://rubygems.pkg.github.com/emboldagency"
-    spec.metadata["github_repo"] = "git@github.com:emboldagency/embold-ruby-style.git"
+    spec.metadata["github_repo"] = "git@github.com:emboldagency/embold_ruby_style.git"
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = spec.homepage
