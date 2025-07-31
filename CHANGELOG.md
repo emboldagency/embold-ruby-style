@@ -9,8 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **Full Changelog**: https://github.com/emboldagency/embold_ruby_style/compare/v0.2.6...v0.2.7
 
 ### Changed
-- Update all repository references from `embold-ruby-style` to `embold_ruby_style` in documentation, gemspec, and badges for consistency.
+- Update all repository references from `embold-ruby-style` to `embold_ruby_style` in documentation, gemspec, and badges for consistency
 - Update instructions to use the GitHub repo as the source when installing the gem
+- Move dev_dependencies that need to be installed in consumer repos into dependencies
 
 ## [0.2.6] - 2025-07-31
 **Full Changelog**: https://github.com/emboldagency/embold_ruby_style/compare/v0.2.5...v0.2.6
