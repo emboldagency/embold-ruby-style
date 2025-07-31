@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.6] - 2025-07-31
+**Full Changelog**: https://github.com/emboldagency/embold-ruby-style/compare/v0.2.5...v0.2.6
+### Changed
+- Convert CI and release workflows to shared workflows for easier reuse across gems
+- Add and update GitHub Actions workflows
+- Move all dependencies to development_dependencies
+- Remove Bundler from development dependencies
+
+### Added
+- Add status badges to README.md
+- Add ASDF .tool-versions for Ruby version management
+
+### Fixed
+- Fix GitHub Actions workflows and commands
+
 ## [0.2.5] - 2024-11-18
 
 **Full Changelog**: https://github.com/emboldagency/embold-ruby-style/compare/v0.2.4...v0.2.5
