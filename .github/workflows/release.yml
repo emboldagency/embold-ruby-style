@@ -1,9 +1,9 @@
-name: Deploy Gem
+
+name: Build and Release Gem
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  release:
+    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -27,3 +27,12 @@ jobs:
           GEM_HOST_API_KEY: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gem push --key github --host https://rubygems.pkg.github.com/emboldagency embold_ruby_style-*.gem
+      - name: Upload gem to GitHub Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./embold_ruby_style-*.gem
+          asset_name: embold_ruby_style.gem
+          asset_content_type: application/gem
