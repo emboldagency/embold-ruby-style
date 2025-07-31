@@ -42,12 +42,13 @@ Gem::Specification.new do |spec|
     spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
     spec.require_paths = ["lib"]
 
-    spec.add_dependency("bundler", "~> 2.5")
-    spec.add_dependency("rake", "~> 13.0")
-    spec.add_dependency("rubocop", "~> 1.54")
-    spec.add_dependency("rubocop-performance", "~> 1.11")
-    spec.add_dependency("rubocop-rails", "~> 2.12")
-    spec.add_dependency("rubocop-rake", "~> 0.6")
-    # spec.add_development_dependency("rubocop-rspec", "~> 2.5") # uncomment if we start using RSpec
-    spec.add_dependency("rubocop-shopify", "~> 2.0")
+    spec.add_development_dependency("bundler", "~> 2.5")
+    spec.add_development_dependency("rake", "~> 13.0")
+    spec.add_development_dependency("rubocop", "~> 1.79.1")
+    spec.add_development_dependency("rubocop-performance", "~> 1.25.0")
+    spec.add_development_dependency("rubocop-rails", "~> 2.32.0")
+    spec.add_development_dependency("rubocop-rails-omakase", "~> 1.1.0") # rubocop-shopify dependency
+    spec.add_development_dependency("rubocop-rake", "~> 0.7.1")
+    spec.add_development_dependency("rubocop-rspec", "~> 3.6.0")
+    spec.add_development_dependency("rubocop-shopify", "~> 2.14")
 end
