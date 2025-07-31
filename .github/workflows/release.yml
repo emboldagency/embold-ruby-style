@@ -2,8 +2,8 @@ name: Deploy Gem
 
 on:
   push:
-    release:
-      types: [published]
+    tags:
+      - 'v*.*.*'
   workflow_dispatch:
 
 jobs:

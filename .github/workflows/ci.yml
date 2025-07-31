@@ -3,13 +3,13 @@ name: Run specs on supported Solidus versions
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
   workflow_dispatch:
 
 concurrency:
   group: test-${{ github.ref_name }}
-  cancel-in-progress: ${{ github.ref_name != 'master' }}
+  cancel-in-progress: ${{ github.ref_name != 'main' }}
 
 permissions:
   contents: read
