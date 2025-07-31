@@ -1,4 +1,3 @@
-
 name: Build and Release Gem
 
 on:
@@ -8,31 +7,7 @@ on:
 
 jobs:
   build-and-publish:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.2
-          bundler-cache: true
-      - name: Build gem
-        run: |
-          gem build embold_ruby_style.gemspec
-      - name: Publish to GitHub Packages
-        env:
-          GEM_HOST_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gem push --key github --host https://rubygems.pkg.github.com/emboldagency embold_ruby_style-*.gem
-      - name: Upload gem to GitHub Release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./embold_ruby_style-*.gem
-          asset_name: embold_ruby_style.gem
-          asset_content_type: application/gem
+    uses: emboldagency/.github/.github/workflows/ruby-gem-release.yml@master
+    with:
+      gem_name: embold_ruby_style
+      gemspec: embold_ruby_style.gemspec
