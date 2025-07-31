@@ -1,8 +1,8 @@
-require:
+plugins: 
   - rubocop-performance
   - rubocop-rails
   - rubocop-rake
-  # - rubocop-rspec # uncomment this line if we start using RSpec
+  - rubocop-rspec
 
 inherit_gem:
   rubocop-shopify: rubocop.yml
